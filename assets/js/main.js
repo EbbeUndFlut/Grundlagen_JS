@@ -167,12 +167,22 @@ for(let i = 0; i<namen.length;i++){
     console.log(namen[i])
 }
 
+// werte werden nicht verändert sie werden als kopie übergeben, ausser es sind selber referenzen
 //for ... of schleife
-for(const name of namen){
+for(let name of namen){
     console.log(name)
+    if(name === "Ihor")
+        name="Franziska"
 }
 console.log("#################################################")
 // foreach
+// keine veränderung des wertes siehe oben ↑
+namen.forEach(name=>{
+    if(name=="Öner")
+        name="Son Goku"
+})
+console.log(namen)
+console.log("~~~~~~~~~~~~~~~~#")
 namen.forEach(name=>console.log(name))
 namen.forEach((element,index) => console.log(index,element))
 namen.forEach((element,index,array)=>console.log(index,element,array))
@@ -191,3 +201,62 @@ do{
     alterA++
 }while(alterA > 18)
 
+// min max aufgabe
+const zahlen = [12,5,8,21,3,17,10]
+
+let min = max = zahlen[0]
+let summe = zahlen[0]
+for(let i = 1; i<zahlen.length;i++){
+    if(zahlen[i]<min)
+        min = zahlen[i]
+    if(zahlen[i] > max)
+        max = zahlen[i]
+    summe += zahlen[i]
+}
+
+console.log("Der kleinste Wert:",min)
+console.log("Der größten Wert:",max)
+console.log("Die Summe:", summe)
+console.log("Durchschnitt:", summe/zahlen.length)
+
+// das geht so nicht 
+let multi =[[1,2,3],[5,6,7]]
+for(let mult of multi){
+    mult = ['a']
+}
+console.log(multi)
+
+// Objekte
+let person = {
+    name: "Christian",
+    alter: 41,
+    kontostand: 2876345
+}
+console.log(typeof person)
+console.log(person)
+const students = [
+    {
+        name:"StudentA",
+        languages: ['PHP', 'C'],
+        age:11
+    },
+    {
+        name:"StudenB",
+        languages: ['Java','JavaScript'],
+        age: 59
+    },
+    {
+        name: "StudenC",
+        languages:['Python','Python','Swift','Rust','Python'],
+        age: 90
+    }
+]
+
+// template litarls
+for(const student of students){
+    console.log(`Mein name ist ${student.name}`)
+    console.log(`Ich bin erst ${student.age} Jahre alt, aber ich `)
+    for(const language of student.languages){
+        console.log(`behersche ${language}`)
+    }
+}
