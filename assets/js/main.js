@@ -81,6 +81,25 @@ if(a < b){
     console.log("Zwischen uns passt einfach gar nichts mehr")
 }
 
+// switch
+
+const tag = 4
+
+switch(tag){
+    case 1:
+        console.log("Montag")
+        break
+    case 2:
+        console.log("Dienstag")
+        break
+    case 3:
+    case 4:
+        console.log("Mittwoch")
+        break
+    default:
+        console.log("komisch, diesen Tag kenne ich nicht")
+}
+
 /**
  * Nun seid ihr am zug. Gegeben ist ein Kontostand 1250
  * baut eine abfrage
